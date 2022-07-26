@@ -1,0 +1,24 @@
+{
+  "name": "sql-challenge-employee-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efargas56/SQL-Challenge-Employee-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/efargas56/SQL-Challenge-Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/efargas56/SQL-Challenge-Employee-Tracker#readme",
+  "dependencies": {
+    "inquirer": "^9.0.2",
+    "mysql2": "^2.3.3"
+  }
+}
