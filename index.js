@@ -38,8 +38,8 @@ const connection = mysql.createConnection({
       ]
     },
 ])
-    .then(answers => {
-        switch(answers) {
+    .then( ({ general }) => {
+        switch(general) {
             case "View all departments":
             viewAllDepartments();
             break;
@@ -76,24 +76,30 @@ const connection = mysql.createConnection({
   
   }
   function viewAllRoles() {
-
-  }
+var query = `SELECT * FROM roles`;
+connection.query(query, function (err, res) {
+    if (err) throw err;
+    console.table(res);
+    StartApp();
+});
+};
   function viewAllEmployees(){
-    ` SELECT
-    employee.id,
-    employee.first_name,
-    employee.last_name,
-    role`
-  }
+    var query = `SELECT * FROM employees`;
+    connection.query(query, function (err, res) {
+        if (err) throw err;
+        console.table(res);
+        StartApp();
+    })
+  };
   function addADepartment() {
 
-  }
+  };
   function addARole() {
 
-  }
+  };
   function addAnEmployee() {
 
-  }
+  };
   function UpdateEmployee() {
 
-  }
+  };

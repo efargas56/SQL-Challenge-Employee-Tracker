@@ -7,7 +7,6 @@ USE employeesdb;
 CREATE TABLE department (
     id INT AUTO_INCREMENT PRIMARY KEY,
     names VARCHAR(30) NULL,
-
 );
 
 CREATE TABLE roles (
@@ -17,10 +16,10 @@ CREATE TABLE roles (
     department_id INTEGER
 );
 
-CREATE TABLE employee (
+CREATE TABLE employees (
    id INT AUTO_INCREMENT PRIMARY KEY,
    first_name VARCHAR(30) NULL,
    last_name VARCHAR(30) NULL,
    role_id INTEGER,
    manager_id INTEGER
-   );
+);
