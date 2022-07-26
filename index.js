@@ -1,17 +1,21 @@
-const mysql = require("mysql");
-const inquirer = require("inquirer");
+const mysql = require("mysql2");
+const inquirer = require('inquirer');
 const cTable = require('console.table');
 
 const connection = mysql.createConnection({
     host: 'localhost',
-    port: '3306',
+    port: 3306,
     user: 'root',
     password: 'abc123',
-    database: 'employeesDB'
-  });
+    database: 'employeesdb'
+  },
+  console.log('Connected to the employee database.')
+
+  );
   
-  connection.execute(function (err){
+  connection.connect(function (err){
     if (err) throw err;
+    console.log("employee Tracker")
     StartApp();
   })
 
@@ -32,10 +36,10 @@ const connection = mysql.createConnection({
         "Update an employee role",
         "Exit"
       ]
-    }
+    },
 ])
-    .then(function ({ general }) {
-        switch(general) {
+    .then(answers => {
+        switch(answers) {
             case "View all departments":
             viewAllDepartments();
             break;
@@ -61,4 +65,35 @@ const connection = mysql.createConnection({
             break;
         }
     });
+  };
+  function viewAllDepartments() {
+    var query = `SELECT * FROM department`;
+    connection.query(query, function (err, res) {
+        if (err) throw err;
+        console.table(res);
+        StartApp();
+    });
+  
+  }
+  function viewAllRoles() {
+
+  }
+  function viewAllEmployees(){
+    ` SELECT
+    employee.id,
+    employee.first_name,
+    employee.last_name,
+    role`
+  }
+  function addADepartment() {
+
+  }
+  function addARole() {
+
+  }
+  function addAnEmployee() {
+
+  }
+  function UpdateEmployee() {
+
   }
